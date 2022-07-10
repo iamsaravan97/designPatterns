@@ -12,13 +12,7 @@
 
         public abstract class Registration
         {
-            public abstract void Login();
-            public abstract void Register();
-            public abstract void Validation();
-            public abstract void Payment();
-            public abstract void Logout();
-
-            public Registration()
+            public static void TemplateMethod(Action Login, Action Register, Action Validation, Action Payment, Action Logout)
             {
                 Login();
                 Register();
@@ -30,59 +24,71 @@
 
         public class SchoolRegistration : Registration
         {
-            public override void Login()
+            public void Login()
             {
                 Console.WriteLine($"Login to {this.GetType().Name}");
             }
 
-            public override void Logout()
+            public void Logout()
             {
                 Console.WriteLine($"Logout from {this.GetType().Name}");
             }
 
-            public override void Register()
+            public void Register()
             {
                 Console.WriteLine($"Registration starts for {this.GetType().Name}");
             }
 
-            public override void Validation()
+            public void Validation()
             {
                 Console.WriteLine($"Validation starts for {this.GetType().Name}");
             }
 
-            public override void Payment()
+            public void Payment()
             {
                 Console.WriteLine($"Payment starts for {this.GetType().Name}");
             }
+
+            public SchoolRegistration()
+            {
+                TemplateMethod(Login, Register, Validation, Payment, Logout);
+            }
+
 
         }
 
         public class CollegeRegistration : Registration
         {
-            public override void Login()
+            public void Login()
             {
                 Console.WriteLine($"Login to {this.GetType().Name}");
             }
 
-            public override void Logout()
+            public void Logout()
             {
                 Console.WriteLine($"Logout from {this.GetType().Name}");
             }
 
-            public override void Register()
+            public void Register()
             {
                 Console.WriteLine($"Registration starts for {this.GetType().Name}");
             }
 
-            public override void Validation()
+            public void Validation()
             {
                 Console.WriteLine($"Validation starts for {this.GetType().Name}");
             }
 
-            public override void Payment()
+            public void Payment()
             {
                 Console.WriteLine($"Payment starts for {this.GetType().Name}");
             }
+
+            public CollegeRegistration()
+            {
+                TemplateMethod(Login, Register, Validation, Payment, Logout);
+            }
+
 
         }
 
