@@ -2,11 +2,16 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Template Design Patterns defines the skeleton of an algo in a operation deferring some steps to subclasses
+        /// Subclasses redefine the steps of an algo without changing algo structure
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Registration Schoolregistration = new SchoolRegistration();
+            new SchoolRegistration();
             Console.WriteLine("--------------------------");
-            Registration Collegeregistration = new CollegeRegistration();
+            new CollegeRegistration();
 
         }
 
